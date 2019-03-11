@@ -1,20 +1,18 @@
 [user]
-	name = Georgii Staroselskii
-	email = georgii.staroselskii@emlid.com
+    name = Alexander Dranitsa
+    email = alexander.dranitsa@emlid.com
 [alias]
     lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    unstage = reset HEAD
     st = status -sb
     undo = checkout --
     subupdate = submodule update --init --recursive
-    cpick = cherry-pick
 [merge]
-	tool = vimdiff
-	ff = only
-	conflictstyle = diff3
+    tool = vimdiff
 [core]
-	excludesfile = ~/.gitignore
-[color]
-	ui = auto
-[gpg]
-	program = gpg2
+    editor = vim
+    pager = less -F -X
+    excludesfile = "~/.gitignore_global"
+[diff]
+    tool = vimdiff
+[status]
+    showUntrackedFiles = all
