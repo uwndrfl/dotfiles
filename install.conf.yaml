@@ -1,15 +1,25 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+        relative: true
+
 - clean: ['~']
 
 - link:
     ~/.dotfiles: ''
+    ~/.gitconfig: git/gitconfig
+    ~/.gitignore: git/gitignore_global
+    ~/.screenrc: screen/screenrc
+    ~/.config/i3/config: i3/config
+    /etc/i3status.conf: i3status.conf #need smth better
+    ~/.config/Code/User/settings.json: code/settings.json
+    ~/.config/Code - Insiders/User/settings.json: code/settings.json # check
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux: tmux/
     ~/.vim: vim/
     ~/.vimrc: vim/vimrc
-    ~/.gitconfig: git/gitconfig
-    ~/.gitignore: git/gitignore
     ~/.zshrc: zsh/zshrc
-    ~/.screenrc: screen/screenrc
     ~/.zprofile: zprofile
     ~/.zprofile.d: zprofile.d
     ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions: zsh/zsh-autosuggestions
@@ -19,3 +29,21 @@
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - vim +PluginInstall +qall
+  -
+    description: "Installing Oh My Zsh"
+    command: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    stdout: true
+    stderr: true
+    stdin: true
+  -
+    description: "install kb-light script for i3"
+    command: 'sh -c "$(cp etc/kb-light.py /usr/local/bin/kb-light.py)"'
+    stdout: true
+    stderr: true
+    stdin: true
+  -
+    description: "install xorg file"
+    command: 'sh -c "$(cp etc/xorg.conf /etc/X11/xorg.conf)"'
+    stdout: true
+    stderr: true
+    stdin: true
