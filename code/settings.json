@@ -1,0 +1,22 @@
+{
+    "window.menuBarVisibility": "toggle",
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": false,
+    "window.zoomLevel": 0,
+    "files.associations": {
+    "*.inc": "makefile"
+    },
+    "editor.minimap.enabled": false,
+    "workbench.sideBar.location": "left",
+    "[makefile]": {},
+    // Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty
+    "editor.rulers": [
+    80
+    ],
+    "editor.renderWhitespace": "boundary",
+    "workbench.colorTheme": "Default High Contrast",
+    "editor.trimAutoWhitespace": true,
+    "workbench.colorCustomizations": {
+    "editorWhitespace.foreground": "#d5f9be51"
+    }
+    }
