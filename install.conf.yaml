@@ -43,3 +43,15 @@
     stdout: true
     stderr: true
     stdin: true
+  -
+    description: "Running Zen fix: kb-light"
+    command: 'sudo bash etc/kblight.sh'
+    stdout: true
+    stderr: true
+    stdin: true
+  -
+    description: "Running Zen fix: backlight"
+    command: 'sudo bash etc/backlight.sh'
+    stdout: true
+    stderr: true
+    stdin: true
