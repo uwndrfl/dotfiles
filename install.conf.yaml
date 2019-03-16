@@ -43,15 +43,3 @@
     stdout: true
     stderr: true
     stdin: true
-  -
-    description: "install kb-light script for i3"
-    command: 'sh -c "$(cp etc/kb-light.py /usr/local/bin/kb-light.py)"'
-    stdout: true
-    stderr: true
-    stdin: true
-  -
-    description: "install xorg file"
-    command: 'sh -c "$(cp etc/xorg.conf /etc/X11/xorg.conf)"'
-    stdout: true
-    stderr: true
-    stdin: true
