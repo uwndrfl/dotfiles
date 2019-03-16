@@ -12,7 +12,8 @@
     ~/.gitignore: git/gitignore_global
     ~/.screenrc: screen/screenrc
     ~/.config/i3/config: i3/config
-    /etc/i3status.conf: i3status.conf #need smth better
+    ~/.config/polybar/config: polybar/config
+    #/etc/i3status.conf: let it be there, currently using polybar
     ~/.config/Code/User/settings.json: code/settings.json
     ~/.config/Code - Insiders/User/settings.json: code/settings.json # check
     ~/.tmux.conf: tmux/tmux.conf
@@ -32,6 +33,12 @@
   -
     description: "Installing Oh My Zsh"
     command: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"'
+    stdout: true
+    stderr: true
+    stdin: true
+  -
+    description: "Running setup script"
+    command: 'sudo bash etc/setup.sh'
     stdout: true
     stderr: true
     stdin: true
