@@ -5,7 +5,12 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-dotfiles=
+read -r -p "Are you sure? [y/N] " response
+if ! [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
+then
+    exit 0
+fi
+
 WP_URL=
 LOCK_URL=
 
