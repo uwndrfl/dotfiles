@@ -26,6 +26,7 @@ packages="
 		curl                            \
 		zsh                             \
 		vim                             \
+		shotwell                        \
 		tilix                           \
 		chromium-browser                \
 		software-properties-common      \
