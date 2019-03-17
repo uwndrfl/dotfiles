@@ -1,14 +1,14 @@
 #! /bin/bash
 
-if [ "$EUID" -ne 0 ]
-  then echo "Please run via sudo"
-  exit
-fi
-
 read -r -p "Are you sure? [y/N] " response
 if ! [[ "$response" =~ ^([yY][eE][sS]|[yY])+$ ]]
 then
     exit 0
+fi
+
+if [ "$EUID" -ne 0 ]
+  then echo "Please run via sudo"
+  exit
 fi
 
 WP_URL=
@@ -61,12 +61,12 @@ sudo apt install code-insiders
 sudo systemctl disable bluetooth.service
 
 # install polybar
-git clone https://github.com/jaagr/polybar.git -o ~
+cd ~ && git clone https://github.com/jaagr/polybar.git
 cd ~/polybar && ./build.sh
 cd ~/polybar/build && make userconfig
 
 #install fonts for polybar
-git clone https://github.com/stark/siji && ./siji/install.sh
+cd ~ && git clone https://github.com/stark/siji && ./siji/install.sh
 sudo dpkg-reconfigure fontconfig-config
 sudo rm /etc/fonts/conf.d/70-no-bitmaps.conf && fc-cache
 
