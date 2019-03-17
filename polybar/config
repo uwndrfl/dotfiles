@@ -58,11 +58,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-right = filesystem xbacklight memory cpu battery temperature wlan pulseaudio xkeyboard date
-
-tray-position = right
-tray-padding = 1
-;tray-background = #0063ff
+modules-right = xbacklight pulseaudio filesystem memory cpu battery temperature wlan xkeyboard date
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -194,8 +190,8 @@ interval = 1
 
 format = <label> <ramp-coreload>
 format-background = #000000
-format-foreground = #ffffff
-format-underline = #000000
+format-foreground = #1200
+format-underline = #888
 format-overline = #000000
 format-padding = 0
 
@@ -204,22 +200,22 @@ label-font = 4
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 3
-ramp-coreload-0-foreground = #ffffff
+ramp-coreload-0-foreground = #888
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 3
-ramp-coreload-1-foreground = #ffffff
+ramp-coreload-1-foreground = #888
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 3
-ramp-coreload-2-foreground = #ffffff
+ramp-coreload-2-foreground = #888
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 3
-ramp-coreload-3-foreground = #ffffff
+ramp-coreload-3-foreground = #888
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 3
-ramp-coreload-4-foreground = #ffffff
+ramp-coreload-4-foreground = #888
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 3
-ramp-coreload-5-foreground = #ffffff
+ramp-coreload-5-foreground = #888
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 3
 ramp-coreload-6-foreground = #ff3b51
@@ -236,7 +232,7 @@ label = ram
 label-font = 4
 label-foreground = #80
 
-bar-used-width = 16
+bar-used-width = 17
 bar-used-gradient = true
 bar-used-foreground-0 = #2f8419
 bar-used-foreground-1 = #449f3d
@@ -281,7 +277,7 @@ time = %H:%M
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #000000
+format-underline = #ffffff
 
 label = %date% %time%
 
@@ -311,6 +307,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
 
+label-discharging = %time%
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
@@ -360,10 +357,10 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-;format-prefix-underline = ${colors.secondary}
+format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-;label-layout-underline = ${colors.secondary}
+label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1

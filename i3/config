@@ -198,6 +198,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec feh --bg-scale ~/Downloads/wp.jpg
 exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 
+exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
+
 exec synclient VertScrollDelta=-79
 exec synclient HorizScrollDelta=-79
 
