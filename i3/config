@@ -194,7 +194,7 @@ bindsym $mod+r mode "resize"
 #
 #}
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec feh --bg-scale /home/dranitsaal/Downloads/wp.jpg #/home/dranitsaal/Downloads/ls.png 
 exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 

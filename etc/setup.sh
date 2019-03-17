@@ -30,7 +30,7 @@ packages="
 		chromium-browser                \
 		software-properties-common      \
 		apt-transport-https             \
-		cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev libxcb-composite0-dev xcb libxcb-ewmh2 # these are for polybar
+		build-essential git cmake cmake-data pkg-config libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-xkb-dev libxcb-xrm-dev libxcb-cursor-dev libasound2-dev libpulse-dev i3-wm libjsoncpp-dev libmpdclient-dev libcurl4-openssl-dev libnl-genl-3-dev # these are for polybar
          "
 
 sudo apt-get update
@@ -63,6 +63,7 @@ sudo systemctl disable bluetooth.service
 # install polybar
 git clone https://github.com/jaagr/polybar.git -o ~
 cd ~/polybar && ./build.sh
+cd ~/polybar/build && make userconfig
 
 #install fonts for polybar
 git clone https://github.com/stark/siji && ./siji/install.sh
