@@ -15,6 +15,7 @@
     ~/.config/polybar/config: polybar/config
     ~/.config/polybar/launch.sh: polybar/launch.sh
     /usr/local/bin/n2.sh: etc/n2.sh
+    /usr/local/bin/lock.sh: etc/lock.sh
     #/etc/i3status.conf: let it be there, currently using polybar
     ~/.config/Code/User/settings.json: code/settings.json
     ~/.config/Code - Insiders/User/settings.json: code/settings.json # check

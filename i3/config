@@ -149,8 +149,8 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do youreally want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+Shift+s exec "i3lock -i ~/Downloads/ls.png && systemctl suspend"
-bindsym $mod+Shift+b exec "i3lock -i ~/Downloads/ls.png -p default -n"
+bindsym $mod+Shift+s exec "lock.sh && systemctl suspend"
+bindsym $mod+Shift+b exec "lock.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -204,7 +204,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id nitrogen --restore
 
 #uncomment for laptop(main, bottom) + HDMI(top) setup
-#exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
+exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
 
 # !!!
 # If u got a nvidia card you will likely meet the issue of dark grey screen and only mouse visible on start of i3
@@ -212,7 +212,7 @@ exec --no-startup-id nitrogen --restore
 # !!!
 
 # uncomment for VGA (main, horiz, left) + HDMI(vert,right) setup 
-exec --no-startup-id xrandr --output VGA-1-1 --primary --mode 1920x1080 --pos 0x392 --rotate normal --output HDMI-1-1 --mode 1920x1080 --pos 1920x0 --rotate left
+#exec --no-startup-id xrandr --output VGA-1-1 --primary --mode 1920x1080 --pos 0x392 --rotate normal --output HDMI-1-1 --mode 1920x1080 --pos 1920x0 --rotate left
 
 exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
 
