@@ -203,21 +203,24 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 exec --no-startup-id nitrogen --restore
 
-#uncomment for laptop(main, bottom) + HDMI(top) setup
-exec --no-startup-id xrandr --output HDMI1 --mode 1920x1080 --pos 0x0 --rotate normal --output VIRTUAL1 --off --output eDP1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal
-
 # !!!
 # If u got a nvidia card you will likely meet the issue of dark grey screen and only mouse visible on start of i3
 # you need to add `exec nvidia-settings --load-config-only` to xinitrc
 # !!!
 
-# uncomment for VGA (main, horiz, left) + HDMI(vert,right) setup 
-#exec --no-startup-id xrandr --output VGA-1-1 --primary --mode 1920x1080 --pos 0x392 --rotate normal --output HDMI-1-1 --mode 1920x1080 --pos 1920x0 --rotate left
+# Easy way - use arandr and export sh script with config
+exec --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-1 --off --output HDMI-0 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 0x353 --rotate normal --output DP-1 --off --output DP-0 --primary --mode 1920x1080 --pos 1920x0 --rotate left
 
 exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
 
 exec synclient VertScrollDelta=-79
 exec synclient HorizScrollDelta=-79
+
+gaps inner 5
+gaps outer 0
+
+# Only enable gaps on a workspace when there is at least one container
+smart_gaps on
 
 for_window [class="^.*"] border pixel 0
 new_window normal 0 px
