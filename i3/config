@@ -213,6 +213,9 @@ exec --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-1 --off --outpu
 
 exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
 
+# Compton
+# exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
+
 exec synclient VertScrollDelta=-79
 exec synclient HorizScrollDelta=-79
 

@@ -12,6 +12,7 @@
     ~/.gitignore: git/gitignore_global
     ~/.screenrc: screen/screenrc
     ~/.config/i3/config: i3/config
+    ~/.config/i3/compton.conf: i3/compton.conf
     ~/.config/polybar/config: polybar/config
     ~/.config/polybar/launch.sh: polybar/launch.sh
     /usr/local/bin/n2.sh: etc/n2.sh

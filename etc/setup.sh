@@ -28,8 +28,8 @@ packages="
 		vim                             \
 		shotwell                        \
 		nitrogen                        \
-		tilix                           \
 		chromium-browser                \
+		compton                         \
 		upower                          \
 		scrot                           \
 		golang-go                       \
