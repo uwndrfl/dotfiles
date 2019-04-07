@@ -40,6 +40,7 @@ HISTFILE=~/.zsh_history
 #aliases
 alias rsend='rsync -avzP'
 
+export PATH=$PATH:/usr/local/bin
 export GCC_COLORS=auto
 stty -ixon
 ACK_PAGER=less
