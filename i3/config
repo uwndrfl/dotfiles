@@ -134,9 +134,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # move to another workspace
 # vertical setup
-#bindsym $mod+Tab move workspace to output up
+bindsym $mod+Tab move workspace to output up
 # horizontal setup
-bindsym $mod+Tab move workspace to output right
+#bindsym $mod+Tab move workspace to output right
 
 # layouts
 bindcode $mod+Shift+34 exec "setxkbmap -layout 'us'"
@@ -203,27 +203,27 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh &
 
 exec --no-startup-id nitrogen --restore
 
-# !!!
-# If u got a nvidia card you will likely meet the issue of dark grey screen and only mouse visible on start of i3
-# you need to add `exec nvidia-settings --load-config-only` to xinitrc
-# !!!
-
-# Easy way - use arandr and export sh script with config
-exec --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-1 --off --output HDMI-0 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 0x353 --rotate normal --output DP-1 --off --output DP-0 --primary --mode 1920x1080 --pos 1920x0 --rotate left
-
-exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
-
-# Compton
-# exec_always --no-startup-id "killall -q compton; compton --config ~/.config/i3/compton.conf"
-
-exec synclient VertScrollDelta=-79
-exec synclient HorizScrollDelta=-79
+#uncomment for laptop(main, bottom) + HDMI(top) setup
+exec --no-startup-id xrandr --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 0x1080 --rotate normal --output HDMI-2 --off
 
 gaps inner 5
 gaps outer 0
 
 # Only enable gaps on a workspace when there is at least one container
 smart_gaps on
+
+# !!!
+# If u got a nvidia card you will likely meet the issue of dark grey screen and only mouse visible on start of i3
+# you need to add `exec nvidia-settings --load-config-only` to xinitrc
+# !!!
+
+# uncomment for VGA (main, horiz, left) + HDMI(vert,right) setup 
+#exec --no-startup-id xrandr --output VGA-1-1 --primary --mode 1920x1080 --pos 0x392 --rotate normal --output HDMI-1-1 --mode 1920x1080 --pos 1920x0 --rotate left
+
+exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
+
+exec synclient VertScrollDelta=-79
+exec synclient HorizScrollDelta=-79
 
 for_window [class="^.*"] border pixel 0
 new_window normal 0 px
