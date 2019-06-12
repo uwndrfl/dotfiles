@@ -1,8 +1,6 @@
 {
     "window.menuBarVisibility": "toggle",
-    "workbench.activityBar.visible": true,
-    "workbench.statusBar.visible": false,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": -1,
     "files.associations": {
     "*.inc": "makefile"
     },
@@ -18,5 +16,6 @@
     "editor.trimAutoWhitespace": true,
     "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#d5f9be51"
-    }
+    },
+    "editor.cursorStyle": "underline"
     }

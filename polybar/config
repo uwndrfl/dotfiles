@@ -58,7 +58,7 @@ font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
 modules-left = bspwm i3
-modules-right = xbacklight pulseaudio filesystem memory cpu battery temperature wlan xkeyboard date
+modules-right = pulseaudio filesystem memory cpu temperature wlan xkeyboard date
 
 ;wm-restack = bspwm
 ;wm-restack = i3
@@ -249,7 +249,7 @@ bar-used-empty-foreground = #44
 
 [module/wlan]
 type = internal/network
-interface = wlp2s0
+interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -334,22 +334,27 @@ animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
+
+; Seconds to sleep between updates
+; Default: 1
+interval = 0.5
+
+; Thermal zone to use
+; To list all the zone types, run 
+; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
+; Default: 0
 thermal-zone = 0
-warn-temperature = 55
 
-format = <ramp> <label>
-format-underline = #449f3d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon0/temp1_input
 
-label = %temperature-c%
-label-warn = HOT ! %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 75
 
 [module/xkeyboard]
 type = internal/xkeyboard
