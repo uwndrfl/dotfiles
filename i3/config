@@ -212,7 +212,7 @@ exec --no-startup-id nitrogen --restore
 # !!!
 
 # Easy way - use arandr and export sh script with config
-exec --no-startup-id xrandr --output DVI-D-0 --off --output HDMI-1 --off --output HDMI-0 --off --output DP-3 --off --output DP-2 --mode 1920x1080 --pos 0x185 --rotate normal --output DP-1 --off --output DP-0 --primary --mode 1920x1080 --pos 1920x0 --rotate left
+exec --no-startup-id xrandr --output HDMI-2 --off --output HDMI-1 --off --output DVI-D-1 --off --output DP-1 --mode 1920x1080 --pos 0x168 --rotate normal --output DP-2 --mode 1920x1080 --pos 1920x0 --rotate left 
 
 exec --no-startup-id i3-msg 'workspace 9; exec chromium-browser'
 

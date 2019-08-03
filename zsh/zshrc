@@ -40,16 +40,6 @@ HISTFILE=~/.zsh_history
 #aliases
 alias rsend='rsync -avzP'
 alias med='i=`ls /media/$USER/` && cd /media/$USER/$i'
-export PATH=$PATH:/usr/local/bin:/media/ad/edfd3e93-afaa-4bce-b5bf-2111b26fcc0e/Xilinx_2018_1/Vivado/2018.1/bin/:/media/ad/edfd3e93-afaa-4bce-b5bf-2111b26fcc0e/Xilinx_2018_1/SDK/2018.1/bin/
-
-# SYNT
-#export PATH=$PATH:/media/ad/edfd3e93-afaa-4bce-b5bf-2111b26fcc0e/RISCV_TOOLS/sc-riscv64-unknown-elf-gcc-20180126-linux64/riscv-unknown-elf-gcc/bin/
-
-#MY
-#export PATH=$PATH:/media/ad/edfd3e93-afaa-4bce-b5bf-2111b26fcc0e/customtoolchain/riscv-tools/riscv/bin
-
-#export RISCV=/media/ad/edfd3e93-afaa-4bce-b5bf-2111b26fcc0e/customtoolchain/riscv-tools/riscv/
-export RISCV_COMPLIANCE_TESTS=/media/ad/edfd3e93-afaa-4bce-b5bf-2111b26fcc0e/riscv-compliance/
 export GCC_COLORS=auto
 stty -ixon
 CK_PAGER=less

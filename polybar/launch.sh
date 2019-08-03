@@ -15,6 +15,6 @@ else
 fi
 
 # Launch
-polybar top &
+#polybar top &
 
 echo "Bar launched"

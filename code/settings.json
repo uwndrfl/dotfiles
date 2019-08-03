@@ -1,6 +1,6 @@
 {
     "window.menuBarVisibility": "toggle",
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "files.associations": {
     "*.inc": "makefile"
     },
@@ -12,10 +12,11 @@
     80
     ],
     "editor.renderWhitespace": "boundary",
-    "workbench.colorTheme": "Default High Contrast",
     "editor.trimAutoWhitespace": true,
     "workbench.colorCustomizations": {
     "editorWhitespace.foreground": "#d5f9be51"
     },
-    "editor.cursorStyle": "underline"
+    "editor.cursorStyle": "underline",
+    "C_Cpp.dimInactiveRegions": false,
+    "workbench.colorTheme": "Default High Contrast"
     }
